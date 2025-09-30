@@ -1,0 +1,65 @@
+<PatientLoginScreen>:
+    name: "patient_login"
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+		
+		###
+		        # Centered Image
+        Image:
+            source: 'assets/vitacare_logo.png'  # Use correct path to the image
+            size_hint: (None, None)
+            size: (200, 200)  # Adjust size as needed
+            pos_hint: {"center_x": 0.5}
+
+        # Centered Welcome Text
+        Label:
+            text: 'Please enter login details'
+            font_size: 24
+            color: 0, 0, 0, 1
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+		
+		###
+
+        TextInput:
+            id: email_input
+            hint_text: 'Email'
+            multiline: False
+            size_hint_y: None
+            height: 50
+
+        TextInput:
+            id: password_input
+            hint_text: 'Password'
+            password: True
+            multiline: False
+            size_hint_y: None
+            height: 50
+
+        Button:
+            text: "Login"
+            size_hint_y: None
+            height: 50
+            on_press: root.login_user()
+
+        Button:
+            text: "Forgot Password?"
+            size_hint_y: None
+            height: 50
+            on_press: app.root.current = "forgot_password_email"
+
+        Button:
+            text: "Don't have an account? Sign Up"
+            size_hint_y: None
+            height: 50
+            on_press: app.root.current = "sign_up"
+
+        Button:
+            text: "Back to Welcome"
+            size_hint_y: None
+            height: 50
+            on_press: app.root.current = "welcome"

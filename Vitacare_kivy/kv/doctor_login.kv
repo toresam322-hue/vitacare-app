@@ -1,0 +1,47 @@
+<DoctorLoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+
+        Label:
+            text: 'Doctor Login'
+            font_size: 24
+            size_hint_y: None
+            height: 40
+
+        TextInput:
+            id: email_input
+            hint_text: 'Email'
+            multiline: False
+            size_hint_y: None
+            height: 50
+
+        TextInput:
+            id: license_input
+            hint_text: 'License Number'
+            multiline: False
+            size_hint_y: None
+            height: 50
+
+        TextInput:
+            id: password_input
+            hint_text: 'Password'
+            password: True
+            multiline: False
+            size_hint_y: None
+            height: 50
+
+        Button:
+            text: 'Login'
+            size_hint_y: None
+            height: 50
+            on_release:
+                root.login_doctor()
+
+        Button:
+            text: 'Back to Welcome'
+            size_hint_y: None
+            height: 50
+            on_release:
+                root.manager.current = 'welcome'

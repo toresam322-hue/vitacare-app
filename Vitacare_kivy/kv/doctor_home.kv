@@ -1,0 +1,54 @@
+<DoctorHomeScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+
+        Label:
+            id: welcome_label
+            text: 'Welcome, Doctor'
+            font_size: 20
+            size_hint_y: None
+            height: 40
+
+        Button:
+            text: 'View Appointments'
+            size_hint_y: None
+            height: 50
+            on_release:
+                root.view_appointments()
+
+        Button:
+            text: 'Patient History'
+            size_hint_y: None
+            height: 50
+            on_release:
+                root.view_patient_history()
+
+        Button:
+            text: 'Prescribe Medication'
+            size_hint_y: None
+            height: 50
+            on_release:
+                root.prescribe_medication()
+
+        Button:
+            text: 'Chat with Patient'
+            size_hint_y: None
+            height: 50
+            on_release:
+                root.chat_with_patient()
+
+        Button:
+            text: 'Start Video Call'
+            size_hint_y: None
+            height: 50
+            on_release:
+                root.start_video_call()
+
+        Button:
+            text: 'Logout'
+            size_hint_y: None
+            height: 50
+            on_release:
+                root.manager.current = 'welcome'

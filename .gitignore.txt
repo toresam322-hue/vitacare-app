@@ -1,0 +1,28 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Databases
+db.sqlite3
+*.db
+
+# Virtual environments
+env/
+venv/
+
+# Logs
+*.log
+
+# Django static/media
+/staticfiles
+/media
+
+# Build tools (Kivy/Buildozer)
+*.apk
+*.buildozer
+*.spec
+
+# VSCode
+.vscode/

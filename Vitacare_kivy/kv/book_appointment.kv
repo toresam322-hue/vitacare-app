@@ -1,0 +1,51 @@
+<BookAppointmentScreen>:
+    name: 'book_appointment'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+
+        Label:
+            id: appointment_status
+            text: "Checking your appointment..."
+            size_hint_y: None
+            height: self.texture_size[1] + 10
+
+        Label:
+            text: "Select Date (YYYY-MM-DD):"
+            size_hint_y: None
+            height: 30
+        TextInput:
+            id: date_input
+            multiline: False
+            hint_text: "Leave blank to auto-select"
+
+        Label:
+            text: "Select Time (HH:MM:SS):"
+            size_hint_y: None
+            height: 30
+        TextInput:
+            id: time_input
+            multiline: False
+            hint_text: "Leave blank to auto-select"
+
+        Label:
+            text: "Enter Doctor Email:"
+            size_hint_y: None
+            height: 30
+        TextInput:
+            id: doctor_email
+            multiline: False
+            hint_text: "e.g. doctor1@clinic.com"
+
+        Button:
+            text: "Book Appointment"
+            size_hint_y: None
+            height: 50
+            on_press: root.book_appointment()
+
+        Button:
+            text: "Go Back"
+            size_hint_y: None
+            height: 40
+            on_press: app.root.current = 'patient_home'

@@ -1,0 +1,70 @@
+<PatientHomeScreen>:
+    name: 'patient_home'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: dp(20)
+        spacing: dp(15)
+
+        Label:
+            id: welcome_label
+            text: "Welcome!"
+            font_size: '24sp'
+            size_hint_y: None
+            height: self.texture_size[1] + dp(10)
+            halign: "center"
+            valign: "middle"
+
+        Label:
+            id: appointment_label
+            text: "Loading appointment..."
+            font_size: '16sp'
+            size_hint_y: None
+            height: dp(40)
+            halign: "center"
+            valign: "middle"
+
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: dp(10)
+            size_hint_y: None
+            height: dp(40)
+
+            Button:
+                text: "Refresh"
+                on_release: root.load_appointment()
+
+            Button:
+                text: "Book Appointment"
+                on_release: root.manager.current = 'book_appointment'
+
+        Button:
+            text: "View Prescriptions"
+            size_hint_y: None
+            height: dp(45)
+            on_release: app.root.current = 'view_prescriptions'
+
+        Button:
+            text: "View Consultations"
+            size_hint_y: None
+            height: dp(45)
+            on_release: app.root.current = 'view_consultations'
+
+        Button:
+            text: "Chat with Doctor"
+            size_hint_y: None
+            height: dp(45)
+            on_release: app.root.current = 'chat_screen'
+
+        Button:
+            text: "Video Call Doctor"
+            size_hint_y: None
+            height: dp(45)
+            on_release: app.root.current = 'video_call'
+
+        Widget:
+
+        Button:
+            text: "Logout"
+            size_hint_y: None
+            height: dp(40)
+            on_release: root.logout()

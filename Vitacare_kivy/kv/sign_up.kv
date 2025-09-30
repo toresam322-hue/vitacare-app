@@ -1,0 +1,70 @@
+<SignUpScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+
+        TextInput:
+            id: email_input
+            hint_text: 'Email'
+            multiline: False
+			size_hint_y: None
+            height: 50
+
+        TextInput:
+            id: first_name_input
+            hint_text: 'First Name'
+            multiline: False
+			size_hint_y: None
+            height: 50
+
+        TextInput:
+            id: last_name_input
+            hint_text: 'Last Name'
+            multiline: False
+			size_hint_y: None
+            height: 50
+
+        TextInput:
+            id: phone_input
+            hint_text: 'Phone Number'
+            multiline: False
+			size_hint_y: None
+            height: 50
+
+        TextInput:
+            id: address_input
+            hint_text: 'Address'
+            multiline: False
+			size_hint_y: None
+            height: 50
+
+        TextInput:
+            id: password_input
+            hint_text: 'Password'
+            password: True
+            multiline: False
+			size_hint_y: None
+            height: 50
+
+        TextInput:
+            id: confirm_password_input
+            hint_text: 'Confirm Password'
+            password: True
+            multiline: False
+			size_hint_y: None
+            height: 50
+
+        Button:
+            text: 'Register'
+            size_hint_y: None
+            height: 50
+            on_release:
+                root.sign_up()  # No arguments passed anymore
+
+        Button:
+            text: 'Back to Login'
+            size_hint_y: None
+            height: 50
+            on_release:
+                root.manager.current = 'patient_login'
